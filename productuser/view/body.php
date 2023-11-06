@@ -59,8 +59,16 @@ include 'view/phantrang.php';
 <div class="container">
     <ul class="pagination justify-content-center">
         <?php for ($i = 1; $i <= $total_pages; $i++) : ?>
+            <?php
+                // Xác định xem có thêm tham số "categoryId" hay không
+                if (isset($_GET['categoryId'])) {
+                    $link = "?categoryId=" . $_GET['categoryId'] . "&page=" . $i;
+                } else {
+                    $link = "?page=" . $i;
+                }
+            ?>
             <li class="page-item <?php echo ($i == $page) ? 'active' : ''; ?>">
-                <a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+                <a class="page-link" href="<?php echo $link; ?>"><?php echo $i; ?></a>
             </li>
         <?php endfor; ?>
     </ul>

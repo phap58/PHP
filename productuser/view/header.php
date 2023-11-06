@@ -46,6 +46,7 @@ include './connect_db.php';
 
                     <button type="button" class="btn btn-sm btn-light dropdown-toggle rounded-0 shadow-none" id="userDropDownMenu" data-bs-toggle="dropdown" aria-expanded="false">
                         <?php
+                        session_start(); // Khởi động phiên làm việc
                         if (isset($_SESSION['username'])) {
                             echo $_SESSION['username']; // Hiển thị tên người dùng nếu đã đăng nhập
                         } else {

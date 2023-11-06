@@ -10,7 +10,7 @@ $result_categories = $conn->query($sql_categories);
 if (isset($_GET['categoryId'])) {
     $categoryId = $_GET['categoryId'];
     $sql = "SELECT * FROM product WHERE CateID = $categoryId";
-    $sql_category_name = "SELECT Name FROM category WHERE ParentID = $categoryId";
+    $sql_category_name = "SELECT Name FROM category WHERE ID = $categoryId";
     $result_category_name = $conn->query($sql_category_name);
     $category_name = ($result_category_name->num_rows > 0) ? $result_category_name->fetch_assoc()['Name'] : "Unknown Category";
 } else {

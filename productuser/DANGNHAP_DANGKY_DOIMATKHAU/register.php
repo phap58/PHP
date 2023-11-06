@@ -1,5 +1,10 @@
 <?php
 session_start(); // Khởi động phiên làm việc
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "demo_db";
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 
 if (isset($_POST['Name']) && isset($_POST['Email']) && isset($_POST['Password'])) {

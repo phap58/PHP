@@ -265,14 +265,6 @@ footer a {
 <body>
 <?php
 ob_start(); 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "demo_db";
-$conn = new mysqli($servername, $username, $password, $dbname);
-if(mysqli_connect_errno()){
-    echo "Connection Fail: ".mysqli_connect_errno();
-}
 
 if (isset($_GET['action']) && $_GET['action'] == 'reg') {
    include "./register.php";

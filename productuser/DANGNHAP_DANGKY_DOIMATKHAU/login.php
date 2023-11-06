@@ -1,7 +1,13 @@
 <?php
 session_start(); // Khởi động phiên làm việc
-
-
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "demo_db";
+$conn = new mysqli($servername, $username, $password, $dbname);
+if(mysqli_connect_errno()){
+    echo "Connection Fail: ".mysqli_connect_errno();
+}
 if (isset($_POST['LogEmail']) && isset($_POST['LogPassword'])) {
     $loginEmail = $_POST['LogEmail'];
     $loginPassword = $_POST['LogPassword'];
